@@ -4,9 +4,6 @@ import dayjs from "dayjs";
 export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(dayjs());
 
-  const dayNames = Array.from({ length: 7 }, (_, i) =>
-    dayjs().day(i).format("dddd")
-  );
   const monthNames = Array.from({ length: 12 }, (_, i) =>
     dayjs().set("month", i).format("MMMM")
   );
@@ -70,11 +67,6 @@ console.log(monthNames)
         </button>
       </div>
       <div className="grid grid-cols-7 text-center">
-        {dayNames.map((day) => (
-          <div key={day} className="font-semibold">
-            {day}
-          </div>
-        ))}
         {renderDays()}
       </div>
     </div>
