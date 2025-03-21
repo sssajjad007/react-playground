@@ -10,6 +10,13 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 
+import dayjs from "dayjs";
+import jalaliday from "jalali-plugin-dayjs";
+
+dayjs.extend(jalaliday);
+dayjs.extend(jalaliday).calendar("jalali");
+dayjs.locale("fa");
+
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
