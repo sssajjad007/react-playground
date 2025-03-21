@@ -4,7 +4,6 @@ import dayjs from "dayjs";
 export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(dayjs());
 
-  // Dynamically get Persian day and month names
   const dayNames = Array.from({ length: 7 }, (_, i) =>
     dayjs().day(i).format("dddd")
   );
